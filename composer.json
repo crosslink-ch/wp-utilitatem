@@ -1,6 +1,6 @@
 {
-	"name": "elevenbytes/wp-utilitatem",
-	"version": "0.1.3",
+	"name": "crosslink-ch/wp-utilitatem",
+	"version": "0.1.4",
 	"type": "library",
 	"authors": [],
 	"autoload": {
