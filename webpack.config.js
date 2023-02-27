@@ -22,6 +22,7 @@ module.exports = {
 	entry: {
 		'footer-script': './tests/js/footer-script/footer-script.js',
 		'header-script': './tests/js/header-script/header-script.js',
-		'main': './tests/js/main/main.js'
+		'main': './tests/js/main/main.js',
+		'core-paragraph': './tests/js/core-paragraph/core-paragraph.js'
 	},
 };

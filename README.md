@@ -36,7 +36,16 @@ By default, scripts are enqueued in the header. If you want a script to be enque
 'footer_scripts' => array( 'my-script-1', 'my-script-2' )
 ```
 
-
 ## Extracted styles
 
 It is assumed that you will be using `@wordpress/scripts` as a base webpack configuration. Extracted css files from JS will be registered as `{$prefix}-extracted-css-{$webpack_entry_point}`.
+
+## Attaching scripts and styles to Gutenberg blocks
+
+Suppose that you want to enqueue a script every time the WordPress paragraph block is rendered on a page.
+
+The name for the WordPress paragraph block is `core/paragraph`
+
+In that case, you would need to create a webpack entry point called `core-paragraph`, and WP Utilitatem will automatically enqueue it whenever that block is rendered on the page.
+
+Furthermore, if you create a file `core-paragraph.scss`, that style will be enqueued only if a paragraph block is rendered on the page.
