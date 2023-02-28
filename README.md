@@ -49,3 +49,7 @@ The name for the WordPress paragraph block is `core/paragraph`
 In that case, you would need to create a webpack entry point called `core-paragraph`, and WP Utilitatem will automatically enqueue it whenever that block is rendered on the page.
 
 Furthermore, if you create a file `core-paragraph.scss`, that style will be enqueued only if a paragraph block is rendered on the page.
+
+## Roadmap
+
+- Add automatic enqueueing for scripts and styles based on the WordPress template system.
