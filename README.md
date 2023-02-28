@@ -36,10 +36,6 @@ By default, scripts are enqueued in the header. If you want a script to be enque
 'footer_scripts' => array( 'my-script-1', 'my-script-2' )
 ```
 
-## Extracted styles
-
-It is assumed that you will be using `@wordpress/scripts` as a base webpack configuration. Extracted css files from JS will be registered as `{$prefix}-extracted-css-{$webpack_entry_point}`.
-
 ## Attaching scripts and styles to Gutenberg blocks
 
 Suppose that you want to enqueue a script every time the WordPress paragraph block is rendered on a page.
