@@ -133,18 +133,25 @@ class AssetsRegistration {
 	}
 
 	public function register_styles() {
-		$register_styles_cb = function( $styles_files, $prefix, $base_path ) {
+		$register_styles_cb = function( $styles_files, $prefix, $base_path, $inject = false ) {
 			foreach ( $styles_files as $file ) {
 				if ( \preg_match( '/(?<name>.+?)\\.css$/', $file, $matches ) ) {
 					$name = $matches['name'];
-
-					\wp_register_style(
-						"{$prefix}-{$name}",
-						$this->util->get_asset_url( $base_path . $file ),
-						array(),
-						\filemtime( $this->util->get_asset_abs_path( $base_path . $file ) )
-					);
-
+					if ( $inject ) {
+						$contents = \file_get_contents( $this->util->get_asset_abs_path( $base_path . $file ) );
+						\add_action( 'wp_footer', function() {
+							echo '<style>';
+							echo $contents;
+							echo '</style>';
+						} );
+					} else {
+						\wp_register_style(
+							"{$prefix}-{$name}",
+							$this->util->get_asset_url( $base_path . $file ),
+							array(),
+							\filemtime( $this->util->get_asset_abs_path( $base_path . $file ) )
+						);
+					}
 				}
 			}
 		};
@@ -161,7 +168,7 @@ class AssetsRegistration {
 
 		if ( file_exists( $js_styles_path ) ) {
 			$styles_files = scandir( $js_styles_path );
-			\call_user_func( $register_styles_cb, $styles_files, "{$this->prefix}-extracted-css", 'build/js/' );
+			\call_user_func( $register_styles_cb, $styles_files, "{$this->prefix}-extracted-css", 'build/js/', true );
 		}
 
 	}
