@@ -139,7 +139,7 @@ class AssetsRegistration {
 					$name = $matches['name'];
 					if ( $inject ) {
 						$contents = \file_get_contents( $this->util->get_asset_abs_path( $base_path . $file ) );
-						\add_action( 'wp_footer', function() {
+						\add_action( 'wp_footer', function() use ($contents) {
 							echo '<style>';
 							echo $contents;
 							echo '</style>';
