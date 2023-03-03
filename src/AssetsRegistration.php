@@ -39,7 +39,16 @@ class AssetsRegistration {
 	public function enqueue_assets_for_blocks( array $blocks ) {
 		foreach ( $blocks as $block ) {
 			$block_name = str_replace( '/', '-', $block['blockName'] );
+
+			// Handle reusable blocks
+			if ( $block_name === 'core-block' ) {
+				$post_id = $block['attrs']['ref'];
+				$this->enqueue_block_assets( $post_id );
+				return;
+			}
+
 			$handle     = $this->prefix . '-' . $block_name;
+
 			if ( ! \wp_script_is( $handle ) ) {
 				$data = $this->get_script_data( $block_name );
 				if ( ! empty( $data['version'] ) ) {
