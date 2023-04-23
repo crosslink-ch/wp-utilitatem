@@ -48,4 +48,5 @@ Furthermore, if you create a file `core-paragraph.scss`, that style will be enqu
 
 ## Roadmap
 
+- Add conditions for when an asset attached to Gutenbeg block should be loaded (and also a filter)
 - Add automatic enqueueing for scripts and styles based on the WordPress template system.

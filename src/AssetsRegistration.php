@@ -44,7 +44,7 @@ class AssetsRegistration {
 			if ( $block_name === 'core-block' ) {
 				$post_id = $block['attrs']['ref'];
 				$this->enqueue_block_assets( $post_id );
-				return;
+				continue;
 			}
 
 			$handle     = $this->prefix . '-' . $block_name;
