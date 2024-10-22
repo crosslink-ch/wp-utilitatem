@@ -36,6 +36,24 @@ By default, scripts are enqueued in the header. If you want a script to be enque
 'footer_scripts' => array( 'my-script-1', 'my-script-2' )
 ```
 
+## Enqueueing assets
+
+WP Utilitatem will automatically register assets, so all you have to do is call `wp_enqueue_style` or `wp_enqueue_script` in a hook like `wp_enqueue_scripts`.
+
+Below are instructions to determine the hook names for your CSS / JS files so that you know how to enqueue them.
+
+### Enqueueing CSS
+
+Hook name will be prefix + css file name. So you enqueue CSS files like this:
+
+`wp_enqueue_style( $prefix . "css-file-name" )`;
+
+### Enqueueing JS
+
+Hook name will be prefix + webpack entry point name. So you enqueue JS files like this:
+
+`wp_enqueue_script( $prefix . "webpack-entry-point-name" )`;
+
 ## Attaching scripts and styles to Gutenberg blocks
 
 Suppose that you want to enqueue a script every time the WordPress paragraph block is rendered on a page.
