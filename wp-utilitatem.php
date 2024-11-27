@@ -5,7 +5,7 @@
  * Requires at least: 6.1
  * Requires PHP: 8.1
  * Version: 0.1.0
- * Author: 11bytes
+ * Author: Cross-Link
  * Text Domain: wputm
  */
 
