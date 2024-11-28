@@ -23,5 +23,4 @@ JS;
 		\add_option( 'wputm_main_js_ran', 'yes' );
 		return 'console.log("hello")';
 	}
-
 }

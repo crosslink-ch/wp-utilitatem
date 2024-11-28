@@ -53,7 +53,7 @@ class Main {
 			)
 		);
 
-		$definitions[ AssetsRegistration::class ] = function( ContainerInterface $c ) {
+		$definitions[ AssetsRegistration::class ] = function ( ContainerInterface $c ) {
 			return new AssetsRegistration(
 				$c->get( IDynamicCss::class ),
 				$c->get( IDynamicJs::class ),

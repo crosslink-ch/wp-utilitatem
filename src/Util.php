@@ -21,10 +21,10 @@ class Util {
 		if ( $this->type === 'theme' ) {
 			if ( $this->is_active_theme() ) {
 				return get_stylesheet_directory_uri() . '/' . $path;
-			} else if ( $this->is_parent_theme() ) {
+			} elseif ( $this->is_parent_theme() ) {
 				return get_template_directory_uri() . '/' . $path;
 			} else {
-				throw new Exception('Must be active or parent theme.');
+				throw new Exception( 'Must be active or parent theme.' );
 			}
 		}
 
@@ -37,10 +37,10 @@ class Util {
 		if ( $this->type === 'theme' ) {
 			if ( $this->is_active_theme() ) {
 				return get_stylesheet_directory() . '/' . $path;
-			} else if ( $this->is_parent_theme() ) {
+			} elseif ( $this->is_parent_theme() ) {
 				return get_template_directory() . '/' . $path;
 			} else {
-				throw new Exception('Must be active or parent theme.');
+				throw new Exception( 'Must be active or parent theme.' );
 			}
 		}
 
@@ -48,7 +48,7 @@ class Util {
 	}
 
 	public function get_theme(): WP_Theme {
-		if ($this->theme) {
+		if ( $this->theme ) {
 			return $this->theme;
 		}
 
@@ -58,7 +58,7 @@ class Util {
 	}
 
 	public function get_dirname(): string {
-		if ($this->dirname) {
+		if ( $this->dirname ) {
 			return $this->dirname;
 		}
 
@@ -78,5 +78,4 @@ class Util {
 
 		return $this->get_dirname() === $theme->get_stylesheet();
 	}
-
 }

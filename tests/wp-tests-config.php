@@ -19,14 +19,13 @@ if ( ! function_exists( 'getenv_docker' ) ) {
 			return $default;
 
 		}
-
 	}
 }
 
 // define( 'WP_DEFAULT_THEME', 'default' );
 
 /* Path to the WordPress codebase you'd like to test. Add a forward slash in the end. */
-define( 'ABSPATH', dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/' );
+define( 'ABSPATH', dirname( dirname( dirname( dirname( __DIR__ ) ) ) ) . '/' );
 
 // Test with multisite enabled.
 // Alternatively, use the tests/phpunit/multisite.xml configuration file.

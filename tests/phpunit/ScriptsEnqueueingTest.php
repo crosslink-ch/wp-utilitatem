@@ -33,7 +33,8 @@ class ScriptsEnqueueingTest extends \WP_UnitTestCase {
 <p>As a new WordPress user, you should go to <a href="http://localhost:8888/:8888/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
-HTML,
+HTML
+			,
 			)
 		);
 	}
